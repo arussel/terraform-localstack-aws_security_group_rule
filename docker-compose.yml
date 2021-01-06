@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  localstack:
+    image: localstack/localstack
+    ports:
+      - 4566:4566
+    environment:
+      - SERVICES=lambda,iam,s3,dynamodb,apigateway,kinesis,sts,redshift,firehose,cloudwatch,logs,dynanmodbstream,ec2
+      - DEBUG=1
