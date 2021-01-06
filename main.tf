@@ -45,7 +45,7 @@ resource "aws_vpc" "redshift_vpc" {
   enable_dns_hostnames = true
 }
 
-resource "aws_subnet" "redshif_subnet" {
+resource "aws_subnet" "redshift_subnet" {
   cidr_block = "10.0.0.0/24"
   vpc_id = aws_vpc.redshift_vpc.id
 }
@@ -53,5 +53,5 @@ resource "aws_subnet" "redshif_subnet" {
 resource "aws_redshift_subnet_group" "redshift_subnet_group" {
   name = "my-redshift-subnet-group"
   subnet_ids = [
-    aws_subnet.redshif_subnet.id]
+    aws_subnet.redshift_subnet.id]
 }
